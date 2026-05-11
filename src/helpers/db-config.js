@@ -1,9 +1,11 @@
 const mongoose = require("mongoose");
-const { MONGO_URI } = require("../lib");
+const { CONN_STR } = require("../lib");
 
+// Centralized MongoDB connection helper so the rest of the app does not need to know connection details.
 const connectDB = async () => {
   try {
-    await mongoose.connect(MONGO_URI);
+    // Mongoose connects using the URI resolved from the shared config module.
+    await mongoose.connect(CONN_STR);
     console.log("MongoDB connected successfully");
   } catch (error) {
     console.log(error);
