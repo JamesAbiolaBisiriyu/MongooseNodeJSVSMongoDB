@@ -51,7 +51,7 @@ npm install
 3. Add your database connection string and optional port:
 
 ```env
-CONN_STR="your_mongodb_connection_string"
+MONGO_URI="your_mongodb_connection_string"
 PORT=3000
 ```
 
